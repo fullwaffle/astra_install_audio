@@ -1,5 +1,8 @@
 import subprocess
 
+LAPTOP_MOTHERBOARD: str = "NS685Is4"
+AUDIO_PACKAGE: str = "bsp-ns685-astra"
+
 
 def get_product_name() -> str:
     """
@@ -38,7 +41,7 @@ def delete_package(package_name: str) -> None:
 
 if __name__ == "__main__":
     product_name: str = get_product_name()
-    if product_name == "NS685Is4":
-        install_package("bsp-ns685-astra")  # Установка звука на Astra Linux 1.7.4 для NS685Is4 ноута
+    if product_name == LAPTOP_MOTHERBOARD:
+        install_package(AUDIO_PACKAGE)  # Установка звука на Astra Linux 1.7.4 для NS685Is4 ноута
     else:
-        delete_package("bsp-ns685-astra")
+        delete_package(AUDIO_PACKAGE)
